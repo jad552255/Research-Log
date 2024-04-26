@@ -1,0 +1,94 @@
+% TODO:
+% Change page style so header only appears on first page
+% Change this to a package instead of using an \include
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{datetime}
+
+\usepackage[parfill]{parskip} 
+
+\usepackage{inputenc}
+\usepackage[english]{babel}
+\usepackage[
+    backend=biber,
+    style=alphabetic,
+    sorting=ynt
+]{biblatex}
+\addbibresource{../sources.bib}
+
+\fancyhf{}
+
+\newcommand{\dateasked}[3]{\fancyhead[L]{Asked: \formatdate{#1}{#2}{#3}}}
+\newcommand{\dateanswered}[3]{\fancyhead[R]{Answered: \formatdate{#1}{#2}{#3}}}
+
+\newcommand{\questionnumber}[1]{
+    \title{\##1}
+    \date{}
+    \maketitle
+}
+
+\newenvironment{question}
+{
+    {\LARGE\bfseries Question} \vspace{5mm}
+}
+{
+    \begin{flushright}
+        $\diamondsuit$
+    \end{flushright}
+}
+
+\newenvironment{motivation}
+{
+    {\LARGE\bfseries Motivation} \vspace{5mm}
+}
+{
+    \begin{flushright}
+        $\diamondsuit$
+    \end{flushright}
+}
+
+\newenvironment{subquestions}
+{
+    {\LARGE\bfseries Subquestions} \vspace{5mm}
+    \begin{itemize}
+}
+{
+    \end{itemize} \vspace{5mm} 
+}
+
+\newenvironment{seedquestions}
+{
+    {\LARGE\bfseries Seeded Questions} \vspace{5mm}
+    \begin{itemize}
+}
+{
+    \end{itemize} \vspace{5mm} 
+}
+
+\newenvironment{answer}
+{
+    {\LARGE\bfseries Answer} \vspace{5mm}
+}
+{
+    \begin{flushright}
+        $\diamondsuit$
+    \end{flushright}
+}
+
+%\newenvironment{subquestions}
+%\newenvironment{seededquestions}
+%
+
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
